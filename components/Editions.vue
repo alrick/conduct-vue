@@ -14,17 +14,27 @@ const label = computed(() => {
       {{ editions.length }} more {{ label }}
       <IconCaretDown class="w-4" />
     </label>
-    <ul tabindex="0" class="dropdown-content z-[1] menu menu-compact p-2 shadow bg-base-100 rounded-box w-96">
-      <li v-for="edition in editions" :key="edition.id">
-        <NuxtLink :to="`/collection/${edition.id}`" class="flex">
-          <div>{{ edition.title }}</div>
-          <div class="flex-grow"></div>
-          <div class="text-xs opacity-50">
-            Edition<br>
-            n° {{ edition.number }}
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+    <div tabindex="0" class="dropdown-content z-30 bg-base-100 w-96 shadow-xl">
+      <div class="max-h-96 overflow-auto">
+        <ul>
+          <li v-for="edition in editions" :key="edition.id" class="">
+            <NuxtLink :to="`/collection/${edition.id}`" class="edition px-4 py-2 flex">
+              <div class="mr-4">{{ edition.title }}</div>
+              <div class="flex-grow"></div>
+              <div class="text-xs opacity-50">
+                Edition<br>
+                n° {{ edition.number }}
+              </div>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.edition:hover {
+  @apply bg-base-200;
+}
+</style>
