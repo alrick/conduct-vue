@@ -1,0 +1,5 @@
+query GetMultiSelectOptions {
+	filters: books(limit: -1) {
+		id
+	}
+}

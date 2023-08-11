@@ -1,0 +1,9 @@
+query GetGlobal {
+	global {
+		title
+		long_title
+		short_description
+		long_description
+		copyright
+	}
+}

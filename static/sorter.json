@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Title",
+    "type": "letters",
+    "criteria": ["short_title", "post_1500_edition_number"]
+  },
+  {
+    "title": "Date",
+    "type": "numbers",
+    "criteria": ["date_of_imprint", "short_title", "post_1500_edition_number"]
+  }
+]

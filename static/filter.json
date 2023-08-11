@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Title",
+    "criteria": "short_title",
+    "type": "text",
+    "placeholder": "ex: The mothers legacie"
+  }
+]
