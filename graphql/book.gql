@@ -1,13 +1,13 @@
-query GetBooks($limit: Int!, $page: Int!, $sort: [String!]!) {
-	books_aggregated(filter: {status: {_eq: "draft"}, post_1500_edition_number: {_eq: 1} }) {
+query GetBooks($limit: Int!, $page: Int!, $sort: [String!]!, $filter: books_filter!) {
+	books_aggregated(filter: { post_1500_edition_number: {_eq: 1} }) {
     count {
       id
 		}
 	},
-	total: books(limit: -1, filter: {post_1500_edition_number: {_eq: 1}, status: {_eq: "draft"} }) {
+	total: books(limit: -1, filter: $filter) {
 		id
 	}
-	books(limit: $limit, page: $page, filter: {status: {_eq: "draft"}, post_1500_edition_number: {_eq: 1} }, sort: $sort) {
+	books(limit: $limit, page: $page, filter: $filter, sort: $sort) {
 		id
 		short_title
 		location_on_imprint

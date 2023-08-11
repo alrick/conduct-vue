@@ -6,7 +6,12 @@ export const useFilterStore = defineStore('filter', () => {
 
   const filter = computed(() => {
     return {
-      _and: [...filterMultiselectStore.filter, ...filterTextStore.filter, ...filterRangeStore.filter]
+      _and: [
+        ...filterMultiselectStore.filter,
+        ...filterTextStore.filter,
+        ...filterRangeStore.filter,
+        { "post_1500_edition_number" : { "_eq": 1 } }
+      ]
     }
   })
 

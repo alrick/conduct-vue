@@ -22,7 +22,7 @@ const store = useCollectionStore()
       </thead>
       <tbody>
         <tr v-if="store.items?.length === 0">
-          <td class="font-semibold">Aucun résultat</td>
+          <td class="font-semibold">No result</td>
         </tr>
         <TableRow v-for="item in store.items" :key="item.id" :item="item" />
       </tbody>
