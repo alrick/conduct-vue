@@ -74,7 +74,10 @@ export const useItemStore = defineStore('item', () => {
           {
             title: 'Section D. Generic features',
             properties: [
-              { title: 'Genre', value: '' },
+              {
+                title: 'Genre',
+                value: itemData.working_generic_labels?.join(', ')
+              },
               { title: 'Direct Addressee', value: itemData.direct_addressee },
               { title: 'Direct Addressee Descriptor', value: itemData.direct_addressee_descriptor?.title },
             ]
