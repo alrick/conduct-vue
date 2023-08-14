@@ -1,8 +1,116 @@
 [
   {
     "title": "Title",
-    "criteria": "short_title",
+    "criteria": [
+      "short_title",
+      "short_title_modern_spelling",
+      "full_title_original_spelling",
+      "variant_title_or_aka"
+    ],
     "type": "text",
     "placeholder": "ex: The mothers legacie"
+  },
+  {
+    "title": "Author",
+    "criteria": [
+      "author_title_page_attribution",
+      "author_modern_attribution",
+      "authorial_status",
+      "title_page_author_descriptor",
+      "modern_translator_attribution"
+    ],
+    "type": "text",
+    "placeholder": "Author or translator"
+  },
+  {
+    "title": "Date of First London Edition",
+    "type": "range",
+    "criteria": "date_of_imprint",
+    "criteria2": "date_of_imprint",
+    "v1": "",
+    "v2": "",
+    "info": ""
+  },
+  {
+    "title": "Addressees",
+    "type": "metadata",
+    "criteria": "direct_addressee_descriptor",
+    "entity": "addressees"
+  },
+  {
+    "title": "Characteristics",
+    "type": "features",
+    "info": "Note that all criteria for this filter must be met simultaneously, unlike other multi-selection filters.",
+    "list": [
+      { "title": "Presence of Date on Imprint", "criteria": "presence_of_date_on_imprint" },
+      { "title": "Illustration", "criteria": "illustration" },
+      { "title": "Ornament or Illustration on Title Page", "criteria": "ornament_or_illustration_on_title_page" },
+      { "title": "Epigram/Epigraph on Title Page", "criteria": "epigram_epigraph_on_title_page" },
+      { "title": "Black Letter on Title Page", "criteria": "black_letter_on_title_page" },
+      { "title": "Presence of Books", "criteria": "presence_of_books" },
+      { "title": "Presence of Chapters", "criteria": "presence_of_chapters" },
+      { "title": "Presence of Letters", "criteria": "presence_of_letters" },
+      { "title": "Presence of Sermons", "criteria": "presence_of_sermons" },
+      { "title": "Presence of Stanzas", "criteria": "presence_of_stanzas" },
+      { "title": "Other Divisions", "criteria": "other_divisions" },
+      { "title": "Latin on Title Page", "criteria": "latin_on_title_page" },
+      { "title": "Greek on Title Page", "criteria": "greek_on_title_page" },
+      { "title": "Implied Status of Author on Title Page", "criteria": "implied_status_of_author_on_title_page" },
+      { "title": "Translation", "criteria": "translation" },
+      { "title": "Translator Attribution on Title Page", "criteria": "translator_attribution_on_title_page" },
+      { "title": "Direct Addressee", "criteria": "direct_addressee" }
+    ]
+  },
+  {
+    "title": "Divisions",
+    "type": "metadata",
+    "criteria": "primary_division",
+    "entity": "divisions"
+  },
+  {
+    "title": "Formats",
+    "type": "metadata",
+    "criteria": "format",
+    "entity": "formats"
+  },
+  {
+    "title": "Keywords",
+    "criteria": [
+      "all_imprint_text",
+      "see_also",
+      "illustration_description",
+      "tp_ornament_or_illustration",
+      "notes"
+    ],
+    "type": "text",
+    "placeholder": "ex: anchor of hope"
+  },
+  {
+    "title": "Language of First Publication",
+    "type": "metadata",
+    "criteria": "language_of_first_publication",
+    "entity": "languages"
+  },
+  {
+    "title": "Language of Title",
+    "type": "metadata",
+    "criteria": "language_of_title",
+    "entity": "languages"
+  },
+  {
+    "title": "Paratexts",
+    "type": "metadata",
+    "criteria": "paratexts",
+    "entity": "paratexts",
+    "multi": "paratexts_id"
+  },
+  {
+    "title": "Reference",
+    "criteria": [
+      "wing_stc_number",
+      "estc_citation_no"
+    ],
+    "type": "text",
+    "placeholder": "Wing STC or ESTC Citation"
   }
 ]

@@ -6,11 +6,11 @@ const props = defineProps<{
 const store = useFilterMultiselectStore()
 
 const activeList = computed(() => {
-  return props.filter.list.filter((option: Option) => option.active)
+  return props.filter.list.filter((option: FilterOption) => option.active)
 })
 
 const inactiveList = computed(() => {
-  return props.filter.list.filter((option: Option) => !option.active)
+  return props.filter.list.filter((option: FilterOption) => !option.active)
 })
 
 const active = computed(() => {
@@ -21,7 +21,8 @@ const active = computed(() => {
 <template>
   <div class="dropdown">
     <label :class="{ 'btn-primary': active }" tabindex="0" class="btn btn-sm m-1 normal-case">
-      <IconListDetails />
+      <IconListDetails v-if="filter.criteria != ''" />
+      <IconListCheck v-else />
       {{ filter.title }}&nbsp;
       <template v-if="active">({{ active }})</template>
       <IconCaretDown />
@@ -42,6 +43,7 @@ const active = computed(() => {
           </ul>
         </div>
         <div>
+          <div class="text-sm italic">{{ filter.info }}</div>
           <a @click="store.reset(filter)" class="link text-sm">Reset</a>
         </div>
       </div>

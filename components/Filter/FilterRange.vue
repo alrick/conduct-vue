@@ -15,9 +15,9 @@ const store = useFilterRangeStore()
         (
           <IconMathEqualGreater v-if="!filter.v2" />
           <IconMathEqualLower v-if="!filter.v1" />
-          <span v-if="filter.v1">{{ formatDate(parseInt(filter.v1)) }}</span>
+          <span v-if="filter.v1">{{ filter.v1 }}</span>
           <span v-if="filter.v1 && filter.v2">&#8211;</span>
-          <span v-if="filter.v2">{{ formatDate(parseInt(filter.v2)) }}</span>
+          <span v-if="filter.v2">{{ filter.v2 }}</span>
         )
       </template>
       <IconCaretDown />

@@ -12,12 +12,12 @@ export const useFilterMultiselectStore = defineStore('filterMultiselect', () => 
     return filters.value.map(({ criteria, list }) => {
       const activeList = list.filter(option => option.active)
       return activeList.length > 0
-        ? {  [criteria]: { _in: activeList.map(option => option.title) } }
+        ? { [criteria]: { _in: activeList.map(option => option.title) } }
         : { _or: [ { [criteria]: { _in: list.map(option => option.title) } }, { [criteria]: { _null: true } } ] }
     })
   })
 
-  async function fetch() {
+  async function init() {
     const { data } = await useAsyncGql('GetMultiSelectOptions')
 
     filters.value.forEach(filter => {
@@ -29,18 +29,18 @@ export const useFilterMultiselectStore = defineStore('filterMultiselect', () => 
         }
       })
       const sortedValues = sanitizeAndSort(criteriaValues)
-      filter.list = sortedValues.map(value => ({ title: value, active: false }))
+      filter.list = sortedValues.map((value, index) => ({ id: index + 1, title: value, active: false }))
     })
   }
 
-  function setActive(filter: FilterMultiSelect, option: Option) {
+  function setActive(filter: FilterMultiSelect, option: FilterOption) {
     const filterOption = filter.list.find(opt => opt.title === option.title)
     if (filterOption) {
       filterOption.active = true
     }
   }
 
-  function removeActive(filter: FilterMultiSelect, option: Option) {
+  function removeActive(filter: FilterMultiSelect, option: FilterOption) {
     const filterOption = filter.list.find(opt => opt.title === option.title)
     if (filterOption) {
       filterOption.active = false
@@ -59,6 +59,6 @@ export const useFilterMultiselectStore = defineStore('filterMultiselect', () => 
     })
   }
 
-  return { filter, filters, fetch, setActive, removeActive, reset, resetAll }
+  return { filter, filters, init, setActive, removeActive, reset, resetAll }
 
 })

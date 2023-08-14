@@ -1,0 +1,26 @@
+query GetMetadata {
+  addressees(limit: -1, sort: "sort") {
+		id
+		title
+	}
+	divisions(limit: -1, sort: "sort") {
+		id
+		title
+	}
+	formats(limit: -1, sort: "number") {
+		id
+		title
+	}
+	generic_labels(limit: -1, sort: "sort") {
+		id
+		title
+	}
+	languages(limit: -1, sort: "sort") {
+		id
+		title
+	}
+	paratexts(limit: -1, sort: "sort") {
+		id
+		title
+	}
+}

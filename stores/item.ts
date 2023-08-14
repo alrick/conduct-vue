@@ -11,7 +11,10 @@ export const useItemStore = defineStore('item', () => {
       item.value = {
         id: Number(id),
         title: itemData.short_title,
-        subtitle: itemData.author_modern_attribution + ', ' + itemData.date_of_imprint,
+        subtitle: [
+          itemData.author_modern_attribution,
+          itemData.date_of_imprint
+        ].filter(Boolean).join(', '),
         date: itemData.date_of_imprint,
         author: {
           name: itemData.author_modern_attribution,
@@ -81,7 +84,10 @@ export const useItemStore = defineStore('item', () => {
             properties: [
               { title: 'Illustration', value: itemData.illustration },
               { title: 'Illustration Description', value: itemData.illustration_description, html: true },
-              { title: 'Paratexts', value: itemData.paratexts?.paratexts_id?.title },
+              {
+                title: 'Paratexts',
+                value: itemData.paratexts?.map((paratext: Paratext) => paratext.paratexts_id?.title || '').join(', ')
+              },
               { title: 'Other Paratexts', value: itemData.other_paratext },
               { title: 'Presence of books', value: itemData.presence_of_books },
               { title: 'Presence of chapters', value: itemData.presence_of_chapters },
