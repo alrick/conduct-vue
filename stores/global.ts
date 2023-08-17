@@ -1,8 +1,7 @@
 export const useGlobalStore = defineStore('global', () => {
   const title = ref('App')
   const longTitle = ref('')
-  const shortDescription = ref('')
-  const longDescription = ref('')
+  const description = ref('')
   const copyright = ref('')
 
   async function fetch() {
@@ -10,12 +9,11 @@ export const useGlobalStore = defineStore('global', () => {
 
     title.value = data.value.global?.title || ''
     longTitle.value = data.value.global?.long_title || ''
-    shortDescription.value = data.value.global?.short_description || ''
-    longDescription.value = data.value.global?.long_description || ''
+    description.value = data.value.global?.description || ''
     copyright.value = data.value.global?.copyright || ''
   }
 
   fetch()
 
-  return { title, longTitle, shortDescription, longDescription, copyright }
+  return { title, longTitle, description, copyright }
 })

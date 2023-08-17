@@ -1,0 +1,31 @@
+query GetOurTeam {
+	page: our_team {
+		id
+		title
+		content
+	}
+}
+
+query GetGlossary {
+	page: glossary {
+		id
+		title
+		content
+	}
+}
+
+query GetCaseStudies {
+	page: case_studies {
+		id
+		title
+		content
+	}
+}
+
+query GetAbout {
+	page: about {
+		id
+		title
+		content
+	}
+}

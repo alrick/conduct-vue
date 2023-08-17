@@ -73,6 +73,7 @@ query GetBook($id: ID!) {
 		implied_gender_of_author
 		implied_status_of_author_on_title_page
 		title_page_author_descriptor
+		authorial_status
 		translation
 		translator_attribution_on_title_page
 		modern_translator_attribution
@@ -88,5 +89,9 @@ query GetBook($id: ID!) {
 		other_paratext
 		working_generic_labels
 		notes
+		primary_division {
+			title
+		}
+		secondary_divisions
 	}
 }

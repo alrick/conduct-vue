@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const page = usePageStore()
-page.fetch('about')
+page.fetch('case-studies')
 </script>
 
 <template>

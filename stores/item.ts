@@ -62,6 +62,7 @@ export const useItemStore = defineStore('item', () => {
               { title: 'Implied Gender of Author', value: itemData.implied_gender_of_author },
               { title: 'Implied Status of Author on Title Page', value: itemData.implied_status_of_author_on_title_page },
               { title: 'Title Page Author Descriptor', value: itemData.title_page_author_descriptor, html: true },
+              { title: 'Authorial Status', value: itemData.authorial_status },
               { title: 'Translation', value: itemData.translation },
               { title: 'Translator Attribution on Title Page', value: itemData.translator_attribution_on_title_page },
               { title: 'Modern Translator Attribution', value: itemData.modern_translator_attribution },
@@ -92,6 +93,8 @@ export const useItemStore = defineStore('item', () => {
                 value: itemData.paratexts?.map((paratext: Paratext) => paratext.paratexts_id?.title || '').join(', ')
               },
               { title: 'Other Paratexts', value: itemData.other_paratext },
+              { title: 'Primary division', value: itemData.primary_division?.title },
+              { title: 'Secondary divisions', value: itemData.secondary_divisions },
               { title: 'Presence of books', value: itemData.presence_of_books },
               { title: 'Presence of chapters', value: itemData.presence_of_chapters },
               { title: 'Presence of letters', value: itemData.presence_of_letters },

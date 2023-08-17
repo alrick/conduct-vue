@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const page = usePageStore()
-page.fetch('about')
+page.fetch('our-team')
 </script>
 
 <template>
