@@ -14,7 +14,8 @@ function checkAllCheckboxes(value: boolean) {
 </script>
 
 <template>
-  <div class="container mx-auto max-w-5xl">
+  <img class="w-full fixed z-0 opacity-50 -mt-10" src="~/assets/img/canvas.png" />
+  <div class="container mx-auto max-w-5xl z-10">
     <DetailsBreadcrumbs :id="identifier" />
     <div class="bg-base-100 shadow-xl rounded-xl p-10">
       <div v-if="store.item">

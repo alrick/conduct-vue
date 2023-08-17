@@ -3,7 +3,7 @@ const store = useGlobalStore()
 </script>
 
 <template>
-  <footer class="footer p-10 bg-neutral text-neutral-content">
+  <footer class="footer p-10 bg-neutral text-neutral-content relative">
     <div>
       <p>
         Conduct Database
