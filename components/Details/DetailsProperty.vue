@@ -16,7 +16,7 @@ defineProps<{
         <DetailsPropertyBoolean :value="property.value" />
       </div>
       <div v-else-if="property.value">{{ property.value }}</div>
-      <div v-else class="text-gray-500">Undefined</div>
+      <div v-else class="text-gray-500">None</div>
     </div>
   </div>
 </template>

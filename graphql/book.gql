@@ -35,7 +35,6 @@ query GetBook($id: ID!) {
 		all_imprint_text
 		wing_stc_number
 		estc_citation_no
-		see_also
 		format {
 			title
 		}

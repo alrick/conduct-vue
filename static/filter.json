@@ -77,7 +77,6 @@
     "title": "Keywords",
     "criteria": [
       "all_imprint_text",
-      "see_also",
       "illustration_description",
       "tp_ornament_or_illustration",
       "notes"
